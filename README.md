@@ -1,5 +1,16 @@
 # WhatsApp Smart Recall — Prototype
 
+## 🚀 Live Demo
+
+| | Link |
+| --- | --- |
+| **Live Demo (Frontend)** | https://whatsapp-smart-search.onrender.com |
+| **Backend API Docs** | https://whatsapp-smart-search-backend.onrender.com/docs |
+
+> ⏳ The backend is hosted on Render's free tier and may take ~30–60s to wake from sleep on the first request.
+
+---
+
 A working full-stack prototype of the **Smart Recall** feature from `case_study.md.txt`:
 on-device semantic search that lets you find WhatsApp content by *meaning* rather than exact
 keywords — including unnamed PDFs, images, and voice notes.
