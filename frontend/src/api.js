@@ -1,8 +1,14 @@
-// Thin fetch wrappers around the FastAPI backend. All calls go through the Vite
-// dev-server proxy at /api -> backend.
+// Thin fetch wrappers around the FastAPI backend.
+//
+// In development, API_BASE is empty and calls hit `/api/...`, which the Vite
+// dev-server proxies to the backend (see vite.config.js).
+// In production (e.g. a static build on Render), set VITE_API_TARGET at build
+// time to the backend's origin so calls resolve to `${API_BASE}/api/...`
+// cross-origin. The backend allows all origins via CORS.
+const API_BASE = (import.meta.env.VITE_API_TARGET || '').replace(/\/$/, '')
 
-async function jsonFetch(url, options) {
-  const res = await fetch(url, {
+async function jsonFetch(path, options) {
+  const res = await fetch(`${API_BASE}${path}`, {
     headers: { 'Content-Type': 'application/json' },
     ...options,
   })
