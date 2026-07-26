@@ -1,0 +1,6 @@
+# Optional: enables the "real model" semantic path.
+# Install with:  pip install -r requirements-ml.txt
+# When present, the backend loads sentence-transformers (all-MiniLM-L6-v2)
+# for genuine on-device-style semantic embeddings. Without it, the backend
+# transparently falls back to a dependency-light pure-Python TF-IDF engine.
+sentence-transformers==3.3.1
